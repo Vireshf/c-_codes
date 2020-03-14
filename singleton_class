@@ -1,0 +1,49 @@
+#include <iostream>
+
+using namespace std;
+
+class Employee
+{
+    static Employee *instance;
+    private:
+        int data;
+        Employee()
+        {
+            data = 0;
+        }
+        
+    public:
+        static Employee * getInstance()
+        {
+            if(instance == NULL){
+                instance = new Employee();
+                cout<<"hello"<<endl;
+            }
+            
+            return instance;
+        }
+        
+        void setdata(int value)
+        {
+            instance->data = value;
+        }
+        
+        int getdata()
+        {
+            return instance->data;
+        }
+};
+
+Employee *Employee::instance = 0;
+
+int main()
+{
+    Employee *e = e->getInstance();
+    e->setdata(100);
+    cout<<e->getdata()<<endl;
+    
+    Employee *e1 = e1->getInstance();
+    e1->setdata(150);
+    cout<<e1->getdata()<<endl;
+    
+}
